@@ -1,0 +1,21 @@
+{
+    "name": "mrfrost/html-object",
+    "description": "PHP HTML Object Generator",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Mrfrost\\HtmlObject\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "MrFrost-Nv27",
+            "email": "nazruelyourgoodfriend@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=8.0"
+    }
+}
