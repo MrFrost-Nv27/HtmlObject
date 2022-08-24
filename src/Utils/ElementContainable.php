@@ -47,6 +47,7 @@ trait ElementContainable
 
     public function generate(string $content = null): string
     {
+        $this->setContent($content);
         return vsprintf("%s%s%s", [
             $this->getOpenTag(),
             $this->getContent(),
