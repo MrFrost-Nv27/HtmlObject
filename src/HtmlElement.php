@@ -2,15 +2,12 @@
 
 namespace MrFrost\HtmlObject;
 
-use RuntimeException;
-
-class Base
+class HtmlElement
 {
     public function __construct(
         public $element,
         public string|null $id = null,
-        public array $class = [],
-        public string $content = ""
+        public array $class = []
     ) {
         $this->isContainable = $element->isContainable();
     }
@@ -18,6 +15,18 @@ class Base
     public function setId(string $newId)
     {
         $this->id = $newId;
+        return $this;
+    }
+
+    public function setClass(string|array|null $newClass = null)
+    {
+        if ($newClass) {
+            if (is_string($newClass)) {
+                $newClass = explode(" ", $newClass);
+            }
+            $this->class = $newClass;
+        }
+        $this->class = [];
         return $this;
     }
 

@@ -2,9 +2,8 @@
 
 namespace MrFrost\HtmlObject\Native;
 
-enum BasicElement: string
+enum HeaderElements: string
 {
-        // Header
     case Header1 = 'h1';
     case Header2 = 'h2';
     case Header3 = 'h3';
@@ -12,17 +11,17 @@ enum BasicElement: string
     case Header5 = 'h5';
     case Header6 = 'h6';
 
-        // Kalimat
-    case Paragraph = 'p';
-    case Break = 'br';
-    case HorizontalRule = 'hr';
-
     public function isContainable(): bool
     {
         return match ($this) {
-            self::Break, self::HorizontalRule
-            => false,
             default => true,
+        };
+    }
+
+    public function getType(): string
+    {
+        return match ($this) {
+            default => "Header Element"
         };
     }
 }
