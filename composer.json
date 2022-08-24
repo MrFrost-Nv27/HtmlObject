@@ -5,7 +5,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Mrfrost\\HtmlObject\\": "src/"
+            "MrFrost\\HtmlObject\\": "src/"
         }
     },
     "authors": [
