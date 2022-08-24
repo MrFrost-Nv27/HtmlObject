@@ -11,7 +11,7 @@ class Header extends HtmlElement
     use HtmlClass;
     use ElementContainable;
     public function __construct(
-        public HeaderElements $element,
+        public $element,
         public string|null $id = null,
         public array $class = [],
         public string $content = ""
