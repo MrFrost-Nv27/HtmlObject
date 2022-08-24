@@ -5,11 +5,9 @@ namespace MrFrost\HtmlObject;
 class HtmlElement
 {
     public function __construct(
-        public $element,
         public string|null $id = null,
         public array $class = []
     ) {
-        $this->isContainable = $element->isContainable();
     }
 
     public function setId(string $newId)

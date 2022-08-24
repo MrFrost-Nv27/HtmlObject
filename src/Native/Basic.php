@@ -6,12 +6,12 @@ use MrFrost\HtmlObject\HtmlElement;
 use MrFrost\HtmlObject\Utils\ElementContainable;
 use MrFrost\HtmlObject\Utils\HtmlClass;
 
-class Header extends HtmlElement
+class Basic extends HtmlElement
 {
     use HtmlClass;
     use ElementContainable;
     public function __construct(
-        public HeaderElements $element,
+        public BasicElements $element,
         public string|null $id = null,
         public array $class = [],
         public string $content = ""
