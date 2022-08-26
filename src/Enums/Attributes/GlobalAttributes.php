@@ -1,6 +1,6 @@
 <?php
 
-namespace MrFrost\HtmlObject\Enums\Elements;
+namespace MrFrost\HtmlObject\Enums\Attributes;
 
 enum GlobalAttributes: string
 {
@@ -21,8 +21,8 @@ enum GlobalAttributes: string
     public function getType(): bool
     {
         return match ($this) {
-            self::contenteditable, self::draggable, self::hidden, self::spellcheck, self::translate => bool,
-            default => string
+            self::contenteditable, self::draggable, self::hidden, self::spellcheck, self::translate => "bool",
+            default => "string"
         };
     }
 }
