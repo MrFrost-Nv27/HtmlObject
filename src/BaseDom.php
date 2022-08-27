@@ -12,6 +12,6 @@ class BaseDom
         public string|int|null $value = null
     ) {
         $this->dom = new DOMDocument();
-        $this->firstNode = $parent ? $this->dom->append($this->dom->createElement($parent->value), $value ?? '') : null;
+        $this->firstNode = $parent ? $this->dom->append($this->dom->createElement($parent->value, $value ?? '')) : null;
     }
 }
