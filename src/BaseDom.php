@@ -8,10 +8,11 @@ use MrFrost\HtmlObject\Enums\Elements\HtmlElements;
 class BaseDom
 {
     public function __construct(
-        public HtmlElements|null $parent = null,
-        public string|int|null $value = null
+        public HtmlElements $element,
+        public array|null $attr = null
     ) {
         $this->dom = new DOMDocument();
-        $this->firstNode = $parent ? $this->dom->append($this->dom->createElement($parent->value, $value ?? '')) : null;
+        $this->body = $this->dom
+            ->append($this->dom->createElement($element->value));
     }
 }
