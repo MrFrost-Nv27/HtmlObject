@@ -5,6 +5,7 @@ namespace MrFrost\HtmlObject\Enums\Elements;
 enum HtmlElements: string
 {
         // Header
+    case Header = 'h';
     case Header1 = 'h1';
     case Header2 = 'h2';
     case Header3 = 'h3';

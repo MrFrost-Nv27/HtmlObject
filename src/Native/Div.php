@@ -15,8 +15,15 @@ class Div extends BaseDom
         parent::__construct($element, $attr);
     }
 
-    public function setText(string|int $text)
+    public function setChildren(array $children)
     {
-        $this->body->textContent = $text;
+        foreach ($children as $child) {
+            $this->dom->documentElement->appendChild($this->dom->importNode($child->dom->documentElement, true));
+        }
+    }
+
+    public function setChild($child)
+    {
+        $this->dom->documentElement->appendChild($this->dom->importNode($child->dom->documentElement, true));
     }
 }
