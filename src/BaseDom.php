@@ -9,13 +9,12 @@ use MrFrost\HtmlObject\Enums\Elements\HtmlElements;
 class BaseDom
 {
     public function __construct(
-        public HtmlElements $element,
-        public array|null $attr = null
+        HtmlElements $element,
+        array|null $attr = null
     ) {
         $this->dom = new DOMDocument();
         $this->body = $this->dom->createElement($element->value);
         $this->dom->append($this->body);
-
         foreach ($attr as $k => $v) {
             $method = 'set' . ucwords($k);
             if (method_exists($this, $method)) {

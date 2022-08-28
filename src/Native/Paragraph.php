@@ -6,7 +6,7 @@ use Exception;
 use MrFrost\HtmlObject\BaseDom;
 use MrFrost\HtmlObject\Enums\Elements\HtmlElements;
 
-class Div extends BaseDom
+class Paragraph extends BaseDom
 {
     public function __construct(
         public HtmlElements $element,
