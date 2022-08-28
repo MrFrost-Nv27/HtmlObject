@@ -9,7 +9,7 @@ use MrFrost\HtmlObject\Enums\Elements\HtmlElements;
 class BaseDom
 {
     public function __construct(
-        HtmlElements $element,
+        public $element,
         array|null $attr = null
     ) {
         $this->dom = new DOMDocument();

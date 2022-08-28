@@ -4,32 +4,29 @@ namespace MrFrost\HtmlObject\Native;
 
 use Exception;
 use MrFrost\HtmlObject\BaseDom;
+use MrFrost\HtmlObject\Enums\Elements\HeaderElements;
 use MrFrost\HtmlObject\Enums\Elements\HtmlElements;
 
 class Header extends BaseDom
 {
     public function __construct(
-        public HtmlElements $header,
+        HtmlElements $header,
         public array|null $attr = null
     ) {
-        if ((isset($attr['level']) && ((1 <= $attr['level']) && ($attr['level'] <= 6)))) {
-            $element = $this->setLevel($attr['level']);
-            unset($attr['level']);
-        } else {
-            $element = HtmlElements::Header4;
-        }
+        $element = (isset($attr['level']) && ((1 <= $attr['level']) && ($attr['level'] <= 6))) ? $this->setLevel($attr['level']) : $header;
+        unset($attr['level']);
         parent::__construct($element, $attr);
     }
 
-    public function setLevel(int $level): HtmlElements
+    public function setLevel(int $level): HeaderElements
     {
         return match ($level) {
-            1 => HtmlElements::Header1,
-            2 => HtmlElements::Header2,
-            3 => HtmlElements::Header3,
-            4 => HtmlElements::Header4,
-            5 => HtmlElements::Header5,
-            6 => HtmlElements::Header6
+            1 => HeaderElements::Header1,
+            2 => HeaderElements::Header2,
+            3 => HeaderElements::Header3,
+            4 => HeaderElements::Header4,
+            5 => HeaderElements::Header5,
+            6 => HeaderElements::Header6
         };
     }
 

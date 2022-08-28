@@ -5,13 +5,7 @@ namespace MrFrost\HtmlObject\Enums\Elements;
 enum HtmlElements: string
 {
         // Header
-    case Header = 'h';
-    case Header1 = 'h1';
-    case Header2 = 'h2';
-    case Header3 = 'h3';
-    case Header4 = 'h4';
-    case Header5 = 'h5';
-    case Header6 = 'h6';
+    case Header = 'h4';
 
         // Semantic
     case Div = 'div';
@@ -44,8 +38,7 @@ enum HtmlElements: string
     public function isAppendable(): bool
     {
         return match ($this) {
-            self::Header1, self::Header2, self::Header3, self::Header4, self::Header5, self::Header6,
-            self::Strong, self::Emphasized, self::Italic, self::Subscript, self::Superscript
+            self::Header, self::Strong, self::Emphasized, self::Italic, self::Subscript, self::Superscript
             => false,
             default => true
         };
