@@ -3,17 +3,19 @@
 namespace MrFrost\HtmlObject\Native;
 
 use MrFrost\HtmlObject\BaseDom;
+use MrFrost\HtmlObject\Enums\Elements\HtmlElements;
 
 class Div extends BaseDom
 {
-    use HtmlClass;
-    use ElementContainable;
     public function __construct(
-        public BasicElements $element,
-        public string|null $id = null,
-        public array $class = [],
-        public string $content = ""
+        public HtmlElements $element,
+        public array|null $attr = null
     ) {
-        $this->isContainable = $element->isContainable();
+        new parent($element, $attr);
+    }
+
+    public function setText(string|int $text)
+    {
+        $this->body->textContent = $text;
     }
 }
